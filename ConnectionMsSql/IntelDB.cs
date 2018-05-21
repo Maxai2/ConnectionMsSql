@@ -118,7 +118,7 @@ namespace ConnectionMsSql
                 //res.ParameterName = "res";
                 //res.SqlDbType = System.Data.SqlDbType.Int;
                 //res.Direction = System.Data.ParameterDirection.Output;
-
+                 
                 //command.Parameters.Add(res);
                 //command.ExecuteNonQuery();
 

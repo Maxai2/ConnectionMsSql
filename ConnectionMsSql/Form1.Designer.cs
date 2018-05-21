@@ -101,7 +101,7 @@
             // bAvgPrice
             // 
             this.bAvgPrice.Enabled = false;
-            this.bAvgPrice.Location = new System.Drawing.Point(13, 157);
+            this.bAvgPrice.Location = new System.Drawing.Point(11, 158);
             this.bAvgPrice.Name = "bAvgPrice";
             this.bAvgPrice.Size = new System.Drawing.Size(347, 23);
             this.bAvgPrice.TabIndex = 6;

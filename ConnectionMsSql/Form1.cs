@@ -35,7 +35,7 @@ namespace ConnectionMsSql
         private void bDisconnect_Click(object sender, EventArgs e)
         {
             _db.CloseConnection();
-            EnableButton(false);
+            EnableButton(false); 
         }
         //----------------------------------------------------------------------
         private void EnableButton(bool isConnect)

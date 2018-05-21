@@ -11,7 +11,7 @@ namespace ConnectionMsSql
         public int Id { get; set; }
         public string Family { get; set; }
         public string Socket { get; set; }
-        public string Generation { get; set; }
+        public string Generation { get; set; } 
         public byte Cores { get; set; }
         public double CoreSpeed { get; set; }
         public double BusSpeed { get; set; }
