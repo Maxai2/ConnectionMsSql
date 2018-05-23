@@ -3,25 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+using System.Configuration;
+using System.Data.Common;
 
 namespace ConnectionMsSql
 {
     class IntelDB
     {
-        private string ConnectionString = "Server=(local);Database=IntelCPU;Trusted_Connection=True;"; //2E-2F
+        private string _connectionString;
+        private DbConnection _connection;
+        private DbProviderFactory _factory;
 
-        private SqlConnection _connection;
+        //----------------------------------------------------------------------
+        public IntelDB(string ConnectionSttringName)
+        {
+            ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings[ConnectionSttringName];
+
+            _connectionString = settings.ConnectionString;
+
+            _factory = DbProviderFactories.GetFactory(settings.ProviderName);
+        }
         //----------------------------------------------------------------------
         public bool OpenConnection()
         {
             try
             {
-                _connection = new SqlConnection(ConnectionString);
+                _connection = _factory.CreateConnection();
+                _connection.ConnectionString = _connectionString;
                 _connection.Open();
                 return true;
             }
-            catch (SqlException)
+            catch (DbException)
             {
                 return false;
             }
@@ -37,12 +49,15 @@ namespace ConnectionMsSql
         {
             try
             {
+                //DbCommand command = _factory.CreateCommand();
+                //command.Connection = _connection;
+
                 //SqlCommand command = new SqlCommand();
                 //command.Connection = _connection;
 
-                SqlCommand command = _connection.CreateCommand();
+                DbCommand command = _connection.CreateCommand();
                 command.CommandText = "SELECT * FROM Processors";
-                SqlDataReader reader = command.ExecuteReader();
+                DbDataReader reader = command.ExecuteReader();
                 List<Processor> processors = new List<Processor>();
 
                 while (reader.Read())
@@ -64,7 +79,7 @@ namespace ConnectionMsSql
                 reader.Close();
                 return processors;
             }
-            catch (SqlException)
+            catch (DbException)
             {
                 return null;
             }
@@ -74,14 +89,20 @@ namespace ConnectionMsSql
         {
             try
             {
-                SqlCommand command = _connection.CreateCommand();
+                DbCommand command = _connection.CreateCommand();
                 command.CommandText = "SELECT * FROM Processors WHERE Id = @id";
 
-                SqlParameter parameter = new SqlParameter("id", Id);
+                DbParameter parameter = _factory.CreateParameter();
+                parameter.ParameterName = "id";
+                parameter.Value = Id;
                 command.Parameters.Add(parameter);
+
+                //DbParameter parameter = new SqlParameter("id", Id);
+                //command.Parameters.Add(parameter);
+
                 //command.Parameters.AddWithValue("id", Id); sql work
 
-                SqlDataReader reader = command.ExecuteReader();
+                DbDataReader reader = command.ExecuteReader();
 
                 Processor processor = new Processor();
 
@@ -101,7 +122,7 @@ namespace ConnectionMsSql
                 reader.Close();
                 return processor;
             }
-            catch (SqlException)
+            catch (DbException)
             {
                 return null;
             }
@@ -118,23 +139,29 @@ namespace ConnectionMsSql
                 //res.ParameterName = "res";
                 //res.SqlDbType = System.Data.SqlDbType.Int;
                 //res.Direction = System.Data.ParameterDirection.Output;
-                 
+
                 //command.Parameters.Add(res);
                 //command.ExecuteNonQuery();
 
                 //return Convert.ToInt32(res.Value);
 
-                SqlCommand command = _connection.CreateCommand();
+                DbCommand command = _connection.CreateCommand();
                 command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.CommandText = "AvgPrice";
 
-                SqlParameter res = command.Parameters.Add("res", System.Data.SqlDbType.Int);
+                DbParameter res = _factory.CreateParameter();
+                res.ParameterName = "res";
+                res.DbType = System.Data.DbType.Int32;
                 res.Direction = System.Data.ParameterDirection.Output;
+
+                //SqlParameter res = command.Parameters.Add("res", System.Data.SqlDbType.Int);
+
+                command.Parameters.Add(res);
                 command.ExecuteNonQuery();
 
                 return Convert.ToInt32(res.Value);
             }
-            catch (SqlException)
+            catch (DbException)
             {
                 return 0;
             }

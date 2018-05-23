@@ -1,0 +1,10 @@
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Project\ConnectionMsSql\ConnectionMsSql\ConnectionMsSql\bin\Debug\ConnectionMsSql.exe.config
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Project\ConnectionMsSql\ConnectionMsSql\ConnectionMsSql\bin\Debug\ConnectionMsSql.exe
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Project\ConnectionMsSql\ConnectionMsSql\ConnectionMsSql\bin\Debug\ConnectionMsSql.pdb
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Project\ConnectionMsSql\ConnectionMsSql\ConnectionMsSql\obj\Debug\ConnectionMsSql.csprojResolveAssemblyReference.cache
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Project\ConnectionMsSql\ConnectionMsSql\ConnectionMsSql\obj\Debug\ConnectionMsSql.Form1.resources
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Project\ConnectionMsSql\ConnectionMsSql\ConnectionMsSql\obj\Debug\ConnectionMsSql.Properties.Resources.resources
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Project\ConnectionMsSql\ConnectionMsSql\ConnectionMsSql\obj\Debug\ConnectionMsSql.csproj.GenerateResource.Cache
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Project\ConnectionMsSql\ConnectionMsSql\ConnectionMsSql\obj\Debug\ConnectionMsSql.csproj.CoreCompileInputs.cache
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Project\ConnectionMsSql\ConnectionMsSql\ConnectionMsSql\obj\Debug\ConnectionMsSql.exe
+C:\Users\Mahm_iz81\Documents\Visual Studio 2017\Project\ConnectionMsSql\ConnectionMsSql\ConnectionMsSql\obj\Debug\ConnectionMsSql.pdb

@@ -27,8 +27,7 @@ namespace ConnectionMsSql
         //----------------------------------------------------------------------
         public string FullInfo()
         {
-            return String.Format("Intel {0} {1} ({2}) [{3} cores, {4} GHz, {5} GT] - {6} UAN",
-                Family, Socket, Generation, Cores, CoreSpeed, BusSpeed, Price);
+            return String.Format("Intel {0} {1} ({2}) [{3} cores, {4} GHz, {5} GT] - {6} UAN", Family, Socket, Generation, Cores, CoreSpeed, BusSpeed, Price);
         }
     }
 }

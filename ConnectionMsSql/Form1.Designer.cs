@@ -121,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 415);
+            this.ClientSize = new System.Drawing.Size(374, 366);
             this.Controls.Add(this.tbAvgPrice);
             this.Controls.Add(this.bAvgPrice);
             this.Controls.Add(this.tbIdSelect);

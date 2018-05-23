@@ -12,7 +12,7 @@ namespace ConnectionMsSql
 {
     public partial class Form1 : Form
     {
-        private IntelDB _db = new IntelDB();
+        private IntelDB _db = new IntelDB("IntelDB");
         //----------------------------------------------------------------------
         public Form1()
         {
